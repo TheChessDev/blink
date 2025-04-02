@@ -32,6 +32,20 @@ function M.clear()
 	state.clear()
 end
 
+-- Jump to the next marked file
+-- @public
+-- @returns nil
+function M.blink_back()
+	state.jump_prev()
+end
+
+-- Jump to the previous marked file
+-- @public
+-- @returns nil
+function M.blink_forward()
+	state.jump_next()
+end
+
 function M.setup()
 	return require("blink.ui")
 end

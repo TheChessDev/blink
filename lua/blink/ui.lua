@@ -16,9 +16,9 @@ function M.open()
 				results = state.get_all(),
 			}),
 			sorter = config.generic_sorter({}),
-			attach_mappings = function(_, _)
+			attach_mappings = function(prompt_bufnr, _)
 				actions.select_default:replace(function()
-					actions.close()
+					actions.close(prompt_bufnr)
 					local selection = action_state.get_selected_entry()
 					if selection then
 						vim.cmd("edit " .. selection.value)
@@ -30,6 +30,4 @@ function M.open()
 		:find()
 end
 
-return {
-	open = M.open,
-}
+return M
