@@ -12,7 +12,7 @@ A minimal Neovim plugin for quickly marking and jumping between files — inspir
 
 ```lua
 {
-  dir = "TheChessDev/blink",
+  "TheChessDev/blink",
   dependencies = { "nvim-telescope/telescope.nvim" },
   config = function()
     local blink = require("blink")
